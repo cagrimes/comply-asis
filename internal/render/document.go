@@ -104,7 +104,7 @@ func preprocessDoc(data *renderData, pol *model.Document, fullPath string) error
 	revisionTable := ""
 	satisfiesTable := ""
 
-	// ||Date|Comment|
+	// ||Date|Version|
 	// |---+------|
 	// | 4 Jan 2018 | Initial Version |
 	// Table: Document history
@@ -120,9 +120,9 @@ func preprocessDoc(data *renderData, pol *model.Document, fullPath string) error
 	if len(pol.Revisions) > 0 {
 		rows := ""
 		for _, rev := range pol.Revisions {
-			rows += fmt.Sprintf("| %s | %s |\n", rev.Date, rev.Comment)
+			rows += fmt.Sprintf("| %s | %s |\n", rev.Date, rev.Version)
 		}
-		revisionTable = fmt.Sprintf("|Date|Comment|\n|---+--------------------------------------------|\n%s\nTable: Document history\n", rows)
+		revisionTable = fmt.Sprintf("|Date|Version|\n|---+--------------------------------------------|\n%s\nTable: Document history\n", rows)
 	}
 
 	gitApprovalInfo, err := getGitApprovalInfo(pol)
@@ -140,7 +140,10 @@ header-includes: |
 	\pagestyle{fancy}
 	\fancyhead{}
 	\fancyhead[RO,RE]{%s}
-	\fancyfoot[LO,LE]{%s confidential %d}
+	% \fancyfoot[LO,LE]{%s confidential %d}
+	\fancyfoot[L]{%s}
+	\fancyfoot[C]{CONFIDENTIAL}
+	\fancyfoot[R]{/thepage}
 ---
 
 %s
