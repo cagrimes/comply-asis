@@ -246,7 +246,7 @@ $else$
   hidelinks,
 $endif$
   pdfcreator={LaTeX via pandoc}}
-\urlstyle{same} % disable monospaced font for URLs
+\urlstyle{sf} % 'same' disables monospaced font for URLs rm, sf, tt allow monospaced fonts
 $if(verbatim-in-note)$
 \VerbatimFootnotes % allow verbatim text in footnotes
 $endif$
