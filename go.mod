@@ -1,6 +1,6 @@
-module github.com/strongdm/comply
+module github.com/cagrimes/comply-asis
 
-go 1.17
+go 1.20.1
 
 require (
 	github.com/Clever/gitsem v1.1.0
