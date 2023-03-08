@@ -5,7 +5,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/strongdm/comply/internal/config"
+	"github.com/cagrimes/comply-asis/internal/config"
 )
 
 func TestSaveGet(t *testing.T) {
