@@ -7,7 +7,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/strongdm/comply/internal/util"
+	"github.com/cagrimes/comply-asis/internal/util"
 	"github.com/urfave/cli"
 )
 
