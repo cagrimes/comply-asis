@@ -11,7 +11,7 @@ type Data struct {
 
 type Revision struct {
 	Date    string `yaml:"date"`
-	Comment string `yaml:"comment"`
+	Comment string `yaml:"version"`
 }
 
 type Satisfaction map[string][]string
