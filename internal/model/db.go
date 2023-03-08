@@ -6,12 +6,13 @@ import (
 	"sync"
 
 	"github.com/nanobox-io/golang-scribble"
-	"github.com/strongdm/comply/internal/config"
+	"github.com/strongdm/comply-asis/internal/config"
 )
 
 var dbSingletonOnce sync.Once
 var dbSingleton *scribble.Driver
 
+// comply or comply-asis???
 // DB provides a singleton reference to a local json cache; will panic if storage location is not writeable.
 func DB() *scribble.Driver {
 	dbSingletonOnce.Do(func() {
