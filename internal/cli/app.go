@@ -21,10 +21,10 @@ import (
 	"github.com/docker/docker/api/types"
 	"github.com/docker/docker/client"
 	"github.com/pkg/errors"
-	"github.com/strongdm/comply/internal/config"
-	"github.com/strongdm/comply/internal/gitlab"
-	"github.com/strongdm/comply/internal/jira"
-	"github.com/strongdm/comply/internal/plugin/github"
+	"github.com/cagrimes/comply-asis/internal/config"
+	"github.com/cagrimes/comply-asis/internal/gitlab"
+	"github.com/cagrimes/comply-asis/internal/jira"
+	"github.com/cagrimes/comply-asis/internal/plugin/github"
 	"github.com/urfave/cli"
 )
 
@@ -274,7 +274,7 @@ var pandocImageExists = func(ctx context.Context) bool {
 		return false
 	}
 	for _, image := range imageList {
-		if len(image.RepoTags) > 0 && strings.Contains(image.RepoTags[0], "strongdm/pandoc:edge") {
+		if len(image.RepoTags) > 0 && strings.Contains(image.RepoTags[0], "cagrimes/pandoc:edge") {
 			return true
 		}
 	}
@@ -300,7 +300,7 @@ var dockerPull = func(c *cli.Context) error {
 
 		select {
 		case <-longishPull:
-			fmt.Print("Pulling strongdm/pandoc:edge Docker image (this will take some time) ")
+			fmt.Print("Pulling cagrimes/pandoc:edge Docker image (this will take some time) ")
 
 			go func() {
 				for {
@@ -319,7 +319,7 @@ var dockerPull = func(c *cli.Context) error {
 		}
 	}()
 
-	r, err := cli.ImagePull(ctx, "strongdm/pandoc:edge", types.ImagePullOptions{})
+	r, err := cli.ImagePull(ctx, "cagrimes/pandoc:edge", types.ImagePullOptions{})
 	if err != nil {
 		return dockerErr
 	}
@@ -352,7 +352,7 @@ func cleanContainers(c *cli.Context) error {
 
 	for _, c := range containers {
 		// assume this container was leftover from previous aborted run
-		if strings.HasPrefix(c.Image, "strongdm/pandoc:edge") {
+		if strings.HasPrefix(c.Image, "cagrimes/pandoc:edge") {
 			d := time.Second * 2
 			err = cli.ContainerStop(ctx, c.ID, &d)
 			if err != nil {
