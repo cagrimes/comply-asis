@@ -1,7 +1,7 @@
 package cli
 
 import (
-	"github.com/strongdm/comply/internal/ticket"
+	"github.com/cagrimes/comply-asis/internal/ticket"
 	"github.com/urfave/cli"
 )
 
