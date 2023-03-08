@@ -8,7 +8,7 @@ import (
 	"runtime"
 	"testing"
 
-	"github.com/strongdm/comply/internal/config"
+	"github.com/cagrimes/comply-asis/internal/config"
 	"gopkg.in/yaml.v2"
 )
 
