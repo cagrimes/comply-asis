@@ -15,14 +15,14 @@ approvedBranch: master
 tickets:
   github:
     token: XXX
-    username: strongdm
-    repo: comply
+    username: cagrimes
+    repo: comply-asis
   # jira:
   #   username: xxxx     # This is the username you log in to Jira's UI with. Probably your email address.
   #   password: xxxx     # If you don't have a "managed account", use your password in this field. But if your organization
   #                      # uses SAML or OAuth, or Jira's built-in multi-factor authentication, you need to use
   #                      # an API token. Learn more here: https://confluence.atlassian.com/cloud/api-tokens-938839638.html
-  #   project: comply
+  #   project: comply-asis
   #   url: https://yourjira
   #   taskType: Task     # This must be an Issue, not a sub-task
   # gitlab:
