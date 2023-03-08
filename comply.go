@@ -6,7 +6,7 @@ import (
 	"runtime"
 
 	"github.com/joho/godotenv"
-	"github.com/strongdm/comply/internal/cli"
+	"github.com/cagrimes/comply-asis/internal/cli"
 )
 
 func main() {
