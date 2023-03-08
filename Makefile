@@ -79,26 +79,26 @@ release: release-env dist release-deps
 	$(eval VERSION := $(shell git describe --tags --always --dirty="-dev"))
 	github-release release \
 	--security-token $$GH_LOGIN \
-	--user strongdm \
-	--repo comply \
+	--user cagrimes \
+	--repo comply-asis \
 	--tag $(VERSION) \
 	--name $(VERSION)
 
 	github-release upload \
 	--security-token $$GH_LOGIN \
-	--user strongdm \
-	--repo comply \
+	--user cagrimes \
+	--repo comply-asis \
 	--tag $(VERSION) \
-	--name comply-$(VERSION)-darwin-amd64.tgz \
+	--name comply-asis-$(VERSION)-darwin-amd64.tgz \
 	--file dist/comply-$(VERSION)-darwin-amd64.tgz
 
 	github-release upload \
 	--security-token $$GH_LOGIN \
-	--user strongdm \
-	--repo comply \
+	--user cagrimes \
+	--repo comply-asis \
 	--tag $(VERSION) \
-	--name comply-$(VERSION)-linux-amd64.tgz \
-	--file dist/comply-$(VERSION)-linux-amd64.tgz
+	--name comply-asis-$(VERSION)-linux-amd64.tgz \
+	--file dist/comply-asis-$(VERSION)-linux-amd64.tgz
 
 	@echo "Update homebrew formula with the following: "
 	$(eval SHA := $(shell curl -s -L https://github.com/strongdm/comply/archive/$(VERSION).tar.gz |shasum -a 256|cut -d" " -f1))
