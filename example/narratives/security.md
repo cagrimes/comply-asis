@@ -1,5 +1,5 @@
 name: Security Architecture Narrative
-acronym: SEN
+acronym: Security_Arch_Narrative
 satisfies:
   TSC:
     - CC6.6
@@ -36,7 +36,8 @@ Describe product infrastructure, emphasizing security measures
 
 {{.Name}} uses the following cloud services for its internal infrastructure:
 
-- List cloud services
+- Amazon Web Services (AWS)
+- Microsoft 365
 
 Access to these cloud services is limited according to the role of the {{.Name}} employee and is reviewed quarterly as well as via regular onboarding/offboarding tasks for new and departing employees.
 
@@ -61,11 +62,13 @@ Access to {{.Name}} infrastructure, both internal and product, is reviewed quart
 
 # Penetration Testing
 
-{{.Name}} commissions an external penetration test on an annual basis. All findings are immediately reviewed and addressed to the satisfaction of the CTO/CEO.
+{{.Name}} does not use penetration testing
 
 # {{.Name}} Physical Security
 
-{{.Name}} has one physical location, in San Francisco, CA. Key issuance is tracked by the Office Physical Security Policy Ledger. Office keys are additionally held by the lessor, property management, and custodial staff. These keys are not tracked by the Office Physical Security Policy Ledger. {{.Name}} managers regularly review physical access privileges.
+UTRS Corporate has one physical location, in Cherry Hill, NJ.
+
+{{.Name}} has no physical location.
 
 {{.Name}} infrastructure is located within AWS. {{.Name}} does not have physical access to AWS infrastructure.
 
