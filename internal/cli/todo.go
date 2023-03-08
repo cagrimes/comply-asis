@@ -6,7 +6,7 @@ import (
 
 	"github.com/fatih/color"
 	"github.com/olekukonko/tablewriter"
-	"github.com/strongdm/comply/internal/model"
+	"github.com/cagrimes/comply-asis/internal/model"
 	"github.com/urfave/cli"
 )
 
