@@ -11,11 +11,11 @@ assets: $(THEME_SOURCES)
 comply: assets $(GO_SOURCES)
 	@# $(eval VERSION := $(shell git describe --tags --always --dirty="-dev"))
 	@# $(eval LDFLAGS := -ldflags='-X "github.com/strongdm/comply/internal/cli.Version=$(VERSION)"')
-	go build $(LDFLAGS) github.com/strongdm/comply
+	go build $(LDFLAGS) github.com/cagrimes/comply-asis
 
 dist: clean
 	$(eval VERSION := $(shell git describe --tags --always --dirty="-dev"))
-	$(eval LDFLAGS := -ldflags='-X "github.com/strongdm/comply/internal/cli.Version=$(VERSION)"')
+	$(eval LDFLAGS := -ldflags='-X "github.com/cagrimes/comply-asis/internal/cli.Version=$(VERSION)"')
 	mkdir dist
 	echo $(VERSION)
 	GOOS=darwin GOARCH=amd64 CGO_ENABLED=0 go build -gcflags=-trimpath=$(GOPATH) -asmflags=-trimpath=$(GOPATH) -ldflags '-extldflags "-static"' $(LDFLAGS) -o dist/comply-$(VERSION)-darwin-amd64 .
@@ -27,7 +27,7 @@ dist: clean
 
 brew: clean $(GO_SOURCES)
 	$(eval VERSION := $(shell cat version))
-	$(eval LDFLAGS := -ldflags='-X "github.com/strongdm/comply/internal/cli.Version=$(VERSION)"')
+	$(eval LDFLAGS := -ldflags='-X "github.com/cagrimes/comply-asis/internal/cli.Version=$(VERSION)"')
 	mkdir bin
 	GOOS=darwin GOARCH=amd64 CGO_ENABLED=0 go build -gcflags=-trimpath=$(GOPATH) -asmflags=-trimpath=$(GOPATH) $(LDFLAGS) -o bin/comply .
 
@@ -37,7 +37,7 @@ clean:
 	rm -f comply
 
 install: assets $(GO_SOURCES)
-	go install github.com/strongdm/comply
+	go install github.com/cagrimes/comply-asis
 
 push-assets: is-clean assets
 	git commit -am "automated asset refresh (via Makefile)"
@@ -52,8 +52,8 @@ else
 endif
 
 docker:
-	cd build && docker build -t strongdm/pandoc:edge .
-	docker push strongdm/pandoc:edge
+	cd build && docker build -t cagrimes/pandoc:edge .
+	docker push cagrimes/pandoc:edge
 
 cleanse:
 	git checkout --orphan newbranch
@@ -115,7 +115,7 @@ minor-release: release-env minor release
 
 docker-release:
 	docker build --build-arg COMPLY_VERSION=`cat VERSION` -t strongdm/comply .
-	docker push strongdm/comply
+	docker push cagrimes/comply-asis
 
 patch: clean gitsem
 	gitsem -m "increment patch for release (via Makefile)" patch
