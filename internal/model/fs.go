@@ -7,8 +7,8 @@ import (
 	"strings"
 
 	"github.com/pkg/errors"
-	"github.com/strongdm/comply/internal/config"
-	"github.com/strongdm/comply/internal/path"
+	"github.com/cagrimes/comply-asis/internal/config"
+	"github.com/cagrimes/comply-asis/internal/path"
 	"gopkg.in/yaml.v2"
 )
 
