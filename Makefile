@@ -90,7 +90,7 @@ release: release-env dist release-deps
 	--repo comply-asis \
 	--tag $(VERSION) \
 	--name comply-asis-$(VERSION)-darwin-amd64.tgz \
-	--file dist/comply-$(VERSION)-darwin-amd64.tgz
+	--file dist/comply-asis-$(VERSION)-darwin-amd64.tgz
 
 	github-release upload \
 	--security-token $$GH_LOGIN \
@@ -114,7 +114,7 @@ minor-release: release-env minor release
 	curl -X POST --data-urlencode 'payload={"channel": "#release", "username": "release", "text": "comply $(VERSION) released", "icon_emoji": ":shipit:"}' $$COMPLY_RELEASE_WEBHOOK
 
 docker-release:
-	docker build --build-arg COMPLY_VERSION=`cat VERSION` -t strongdm/comply .
+	docker build --build-arg COMPLY_VERSION=`cat VERSION` -t cagrimes/comply-asis .
 	docker push cagrimes/comply-asis
 
 patch: clean gitsem
