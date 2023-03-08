@@ -1,8 +1,8 @@
 package cli
 
 import (
-	"github.com/strongdm/comply/internal/config"
-	"github.com/strongdm/comply/internal/model"
+	"github.com/cagrimes/comply-asis/internal/config"
+	"github.com/cagrimes/comply-asis/internal/model"
 	"github.com/urfave/cli"
 )
 
