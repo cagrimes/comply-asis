@@ -11,7 +11,7 @@ import (
 	"github.com/docker/docker/api/types/container"
 	"github.com/docker/docker/client"
 	"github.com/pkg/errors"
-	"github.com/strongdm/comply/internal/config"
+	"github.com/cagrimes/comply-asis/internal/config"
 )
 
 var pandocArgs = []string{"-f", "markdown+smart", "--toc", "-N", "--template", "templates/default.latex", "-o"}
@@ -44,7 +44,7 @@ func dockerPandoc(outputFilename string, errOutputCh chan error) {
 	}
 
 	resp, err := cli.ContainerCreate(ctx, &container.Config{
-		Image: "strongdm/pandoc:edge",
+		Image: "cagrimes/pandoc:edge",
 		Cmd:   pandocCmd},
 		hc, nil, nil, "")
 
