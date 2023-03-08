@@ -14,8 +14,8 @@ import (
 	"os/exec"
 
 	"github.com/pkg/errors"
-	"github.com/strongdm/comply/internal/config"
-	"github.com/strongdm/comply/internal/model"
+	"github.com/cagrimes/comply-asis/internal/config"
+	"github.com/cagrimes/comply-asis/internal/model"
 )
 
 // TODO: refactor and eliminate duplication among narrative, policy renderers
