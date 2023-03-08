@@ -5,7 +5,7 @@ import (
 	"sync"
 
 	"github.com/davecgh/go-spew/spew"
-	"github.com/strongdm/comply/internal/config"
+	"github.com/cagrimes/comply-asis/internal/config"
 )
 
 var tsPluginsMu sync.Mutex
