@@ -6,7 +6,7 @@ import (
 	"time"
 
 	"github.com/pkg/errors"
-	"github.com/scagrimes/comply-asis/internal/config"
+	"github.com/cagrimes/comply-asis/internal/config"
 	"github.com/cagrimes/comply-asis/internal/model"
 )
 
