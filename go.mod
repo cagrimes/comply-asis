@@ -2,7 +2,7 @@ module github.com/cagrimes/comply-asis
 
 go 1.17
 
-go toolchain@1.21.0
+toolchain go1.21rc3
 
 require (
 	github.com/Clever/gitsem v1.1.0
