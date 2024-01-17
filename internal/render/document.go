@@ -1,6 +1,7 @@
 // This creates the title page including tables and header/footer
 // Need to review the fancyheader/footer packages and modify
-// Check data classificatin policy for correct classification (146-148)
+// Corrected classification to ASIS Data Classification Policy
+// Line 149 - changed to backslash
 package render
 
 import (
@@ -143,10 +144,10 @@ header-includes: |
 	\pagestyle{fancy}
 	\fancyhead{}
 	\fancyhead[RO,RE]{%s}
-	% \fancyfoot[LO,LE]{%s confidential %d}
+	% \fancyfoot[LO,LE]{%s Restricted %d}
 	\fancyfoot[L]{%s}
-	\fancyfoot[C]{CONFIDENTIAL}
-	\fancyfoot[R]{/thepage}
+	\fancyfoot[C]{RESTRICTED}
+	\fancyfoot[R]{\thepage} 
 ---
 
 %s

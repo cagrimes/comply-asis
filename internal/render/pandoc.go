@@ -17,7 +17,9 @@ import (
 	"github.com/pkg/errors"
 	"github.com/cagrimes/comply-asis/internal/config"
 )
-
+// -f = from (markdown + smart extension) | --toc calls for table of contents
+// -N = numbered sections | --template calls the template file specified | -o = output file 
+// See: https://pandoc.org/MANUAL.html
 var pandocArgs = []string{"-f", "markdown+smart", "--toc", "-N", "--template", "templates/default.latex", "-o"}
 
 func pandoc(outputFilename string, errOutputCh chan error) {
