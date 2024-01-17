@@ -11,6 +11,9 @@ Comply is a SOC2-focused compliance automation tool:
 macOS:
 
 `brew tap strongdm/comply; brew install comply`
+??
+`brew tap cagrimes/comply-asis; brew install comply-asis`
+
 
 Linux:
 

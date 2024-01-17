@@ -35,7 +35,7 @@ type renderData struct {
 	Stats      *stats
 	Narratives []*model.Document
 	Policies   []*model.Document
-	Procedures []*model.Procedure
+	Procedures []*model.Document
 	Standards  []*model.Standard
 	Tickets    []*model.Ticket
 	Controls   []*control
