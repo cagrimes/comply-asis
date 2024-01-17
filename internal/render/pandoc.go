@@ -1,3 +1,7 @@
+// Calls pandoc and sets some pandoc configurations including default.latex
+// Review pandoc and check line 21 (var pandocArgs)
+// Also calls Docker if no pandoc
+
 package render
 
 import (
@@ -35,7 +39,7 @@ func dockerPandoc(outputFilename string, errOutputCh chan error) {
 
 	pwd, err := os.Getwd()
 	if err != nil {
-		errOutputCh <- errors.Wrap(err, "unable to get workding directory")
+		errOutputCh <- errors.Wrap(err, "unable to get working directory") //corrected "workding"
 		return
 	}
 

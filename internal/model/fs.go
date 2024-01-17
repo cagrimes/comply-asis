@@ -121,18 +121,45 @@ func ReadNarratives() ([]*Document, error) {
 
 	return narratives, nil
 }
-
+// Rename Procedures to Processes?? 
 // ReadProcedures loads procedure descriptions from the filesystem.
-func ReadProcedures() ([]*Procedure, error) {
-	var procedures []*Procedure
-	files, err := path.Procedures()
+//func ReadProcedures() ([]*Procedure, error) {
+//	var procedures []*Procedure
+//	files, err := path.Procedures()
+//
+//	if err != nil {
+//		return nil, errors.Wrap(err, "unable to enumerate paths")
+//	}
+//
+//	for _, f := range files {
+//		p := &Procedure{}
+//		mdmd, err := loadMDMD(f.FullPath)
+//		if err != nil {
+//			return nil, err
+//		}
+//		err = yaml.Unmarshal([]byte(mdmd.yaml), &p)
+//		if err != nil {
+//			return nil, errors.Wrap(err, "unable to parse "+f.FullPath)
+//		}
+//		p.Body = mdmd.body
+//		p.FullPath = f.FullPath
+//		p.ModifiedAt = f.Info.ModTime()
+//		procedures = append(procedures, p)
+//	}
+//
+//	return procedures, nil
+//}
+// New Procedures now as Document to create pdf
+func ReadProcedures() ([]*Document, error) {
+	var procedures []*Document
 
+	files, err := path.Procedures()
 	if err != nil {
 		return nil, errors.Wrap(err, "unable to enumerate paths")
 	}
 
 	for _, f := range files {
-		p := &Procedure{}
+		p := &Document{}
 		mdmd, err := loadMDMD(f.FullPath)
 		if err != nil {
 			return nil, err
@@ -144,6 +171,7 @@ func ReadProcedures() ([]*Procedure, error) {
 		p.Body = mdmd.body
 		p.FullPath = f.FullPath
 		p.ModifiedAt = f.Info.ModTime()
+		p.OutputFilename = fmt.Sprintf("%s-%s.pdf", config.Config().FilePrefix, p.Acronym)
 		procedures = append(procedures, p)
 	}
 

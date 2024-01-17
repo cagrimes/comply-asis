@@ -6,8 +6,8 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/strongdm/comply/internal/path"
-	"github.com/strongdm/comply/internal/util"
+	"github.com/cagrimes/comply-asis/internal/path"
+	"github.com/cagrimes/comply-asis/internal/util"
 )
 
 type ReadFiles struct{}

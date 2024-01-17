@@ -1,3 +1,6 @@
+// This is the ticketing module
+// How can I get rid of this??
+
 package model
 
 import (

@@ -1,3 +1,6 @@
+// This creates the title page including tables and header/footer
+// Need to review the fancyheader/footer packages and modify
+// Check data classificatin policy for correct classification (146-148)
 package render
 
 import (

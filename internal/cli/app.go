@@ -41,12 +41,12 @@ func Main() {
 
 func newApp() *cli.App {
 	app := cli.NewApp()
-	app.Name = "comply"
+	app.Name = "comply" //think of a new name
 	if Version == "" {
 		app.HideVersion = true
 	}
 	app.Version = Version
-	app.Usage = "policy compliance toolkit"
+	app.Usage = "SOC policy compliance toolkit"
 
 	app.Commands = []cli.Command{
 		beforeCommand(initCommand, notifyVersion),
