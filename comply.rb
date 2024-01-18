@@ -1,9 +1,9 @@
 class ComplyAsis < Formula
   desc "SOC policy builder"
   homepage "http://iassecurity.net"
-  url "file://Users/iassco/Downloads/comply-asis-Homebrew.tar"
-  version "1.0"
-  sha256 "07d106a5f2040200cecce419f77426b9e667c822a5266997955789ca0b2915ba"
+  url "file:///opt/homebrew/Library/cagrimes/comply-asis"
+  version "1.3"
+  sha256 "789ec19d5de247d3ff363bada1140b81ab1ca6096606dd79ec4597811e90366d"
   license "Apache-2.0"
 
   depends_on "cmake" => :build
@@ -32,6 +32,7 @@ class ComplyAsis < Formula
     #
     # The installed folder is not in the path, so use the entire path to any
     # executables being tested: `system "#{bin}/program", "do", "something"`.
-    system "false"
+    # system "false"
+    system "#{bin}/sdm", "logout"
   end
 end
